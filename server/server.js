@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-let PORT = process.env.PORT || 5000;
+let PORT = process.env.PORT || 5001;
 
 app.use(express.json());
 app.use(express.static('server/public'));
@@ -13,8 +13,30 @@ let calculations = []
 // Here's a wonderful place to make some routes:
 
 // GET /calculations
-
+app.get('/ calculations', (req,res) => {
+console.log('request for /calculations was made')
+res.send(calculations)
+})
 // POST /calculations
+app.post('/calculations', (req,res) => {
+console.log('POST on /calculations', req.body);
+
+calculations.push(req.body)
+res.sendStatus(201)
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // PLEASE DO NOT MODIFY ANY CODE BELOW THESE BEARS:
