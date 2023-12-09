@@ -1,6 +1,6 @@
 
-let firstInput = 1
-let secondInput = 7
+// let firstInput = 1
+// let secondInput = 7
 
 
 function addFunction(firstNumber, secondNumber)  {
@@ -9,3 +9,5 @@ function addFunction(firstNumber, secondNumber)  {
     console.log('this is the result', result);
 }
 addFunction(firstInput,secondInput)
+
+module.exports(addFunction())

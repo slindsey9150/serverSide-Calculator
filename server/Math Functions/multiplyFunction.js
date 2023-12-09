@@ -1,6 +1,6 @@
 
-let firstInput = 3
-let secondInput = 7
+// let firstInput = 3
+// let secondInput = 7
 
 
 function multiplyFunction(firstNumber, secondNumber)  {
@@ -9,3 +9,5 @@ function multiplyFunction(firstNumber, secondNumber)  {
     console.log('this is the result', result);
 }
 multiplyFunction(firstInput,secondInput)
+
+module.exports(multiplyFunction())

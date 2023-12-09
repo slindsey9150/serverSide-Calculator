@@ -1,6 +1,6 @@
 
-let firstInput = 1
-let secondInput = 7
+// let firstInput = 1
+// let secondInput = 7
 
 
 function subtractFunction(firstNumber, secondNumber)  {
@@ -9,3 +9,5 @@ function subtractFunction(firstNumber, secondNumber)  {
     console.log('this is the result', result);
 }
 subtractFunction(firstInput,secondInput)
+
+module.exports(subtractFunction())
