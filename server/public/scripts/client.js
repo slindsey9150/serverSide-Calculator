@@ -7,15 +7,16 @@ axios({
     method: 'GET',
     url:'/calculations'
 }).then((response) => {
-    console.log('success', response.data);
+    // console.log('success', response.data);
        //display most recent result
    document.getElementById("recentResult").innerHTML = JSON.stringify(response.data[response.data.length-1].result);
      //display list of previous calculations
-     for (let i=0; i < response.data.length; i++){
-        console.log('response data', response.data);
-     document.getElementById("resultHistory").innerHTML = `${JSON.stringify(response.data[i])}`
-     console.log('response Data',  JSON.stringify(response.data[i]))
+     for (let i=0; i <= response.data.length-1; i++){
+        for(let object of response.data){
+        console.log('response data', object);
+     document.getElementById("resultHistory").innerHTML = `${object.numOne} ${object.operator} ${object.numTwo}= ${object.result}`
      }
+    }
 }).catch((error) => {
     console.log('server error', error);
 })
