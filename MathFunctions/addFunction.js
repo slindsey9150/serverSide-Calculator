@@ -1,6 +1,6 @@
 
-// let firstInput = 1
-// let secondInput = 7
+let firstInput = 1
+let secondInput = 7
 
 
 function addFunction(firstNumber, secondNumber)  {
