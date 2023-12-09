@@ -1,8 +1,8 @@
-console.log('client.js is sourced!');
 //variable to add math operator to calculations array
 let theOperator = ''
-let resultHistoryHTML = ''
 function handleGETEquation() {
+    let resultHistoryHTML = ''
+
 axios({
     method: 'GET',
     url:'/calculations'
@@ -22,13 +22,14 @@ axios({
 for (let i = 0; i < response.data.length; i++) {
     let object = response.data[i];
     console.log('response data', object);
+    console.log('in for loop',object);
 
     // Append the result to the HTML string
-    resultHistoryHTML = `${object.numOne} ${object.operator} ${object.numTwo} = ${object.result}<br>`;
+    resultHistoryHTML += `${object.numOne} ${object.operator} ${object.numTwo} = ${object.result}<br>`;
 }
 
 // Set the accumulated HTML to the element's innerHTML once after the loop
-document.getElementById("resultHistory").innerHTML += resultHistoryHTML;
+document.getElementById("resultHistory").innerHTML = resultHistoryHTML;
 
 }).catch((error) => {
     console.log('server error', error);
@@ -65,7 +66,7 @@ function handlePOSTEquation(event) {
 //function to add math operator to calculations array
 function hereAValue(event){
   event.preventDefault()
-  console.log('I was Clicked');
+//   console.log('I was Clicked');
 //   console.log('this is the type of operator i am',  event.target.closest('button').textContent);
   let anOperator = event.target.closest('button').textContent;
   theOperator = anOperator
