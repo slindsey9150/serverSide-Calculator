@@ -23,10 +23,9 @@ function handlePOSTEquation(event) {
         method:'POST',
         url:'/calculations',
         data:       {
-            numOne: firstInput.value,
-            numTwo: secondInput.value,
+            numOne: Number(firstInput.value),
+            numTwo: Number(secondInput.value),
             operator: theOperator,
-            result: 8
           }
     }).then((response) => {
         console.log('successfully added');
@@ -40,7 +39,8 @@ function handlePOSTEquation(event) {
 function hereAValue(event){
   event.preventDefault()
   console.log('I was Clicked');
-  console.log('this is the type of operator i am',  event.target.closest('button').textContent);
+//   console.log('this is the type of operator i am',  event.target.closest('button').textContent);
   let anOperator = event.target.closest('button').textContent;
   theOperator = anOperator
   }
+

@@ -1,3 +1,4 @@
+// let resultsArray = [];
 let practiceArray = [
     {
       numOne: 3,
@@ -21,9 +22,12 @@ let practiceArray = [
       }
 ];
 console.log('this is the practice array', practiceArray);
+
 function doMath() {
+    // event.preventDefault()
     // console.log('do math function');
     for (let value of practiceArray) {
+    //   let  practiceArray = collections
         // console.log('this is a value:', value);
         if (value.operator === '+') {
             let result = addFunction(value.numOne, value.numTwo);
@@ -101,5 +105,5 @@ function subtractFunction(firstNumber, secondNumber)  {
         // console.log('this is the divideFUnction result', result);
         return result;
     }
-    module.exports=doMath()
-
+    // module.exports=doMath()
+doMath()
