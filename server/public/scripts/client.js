@@ -1,7 +1,7 @@
 console.log('client.js is sourced!');
 //variable to add math operator to calculations array
 let theOperator = ''
-
+let resultHistoryHTML = ''
 function handleGETEquation() {
 axios({
     method: 'GET',
@@ -11,12 +11,25 @@ axios({
        //display most recent result
    document.getElementById("recentResult").innerHTML = JSON.stringify(response.data[response.data.length-1].result);
      //display list of previous calculations
-     for (let i=0; i <= response.data.length-1; i++){
-        for(let object of response.data){
-        console.log('response data', object);
-     document.getElementById("resultHistory").innerHTML = `${object.numOne} ${object.operator} ${object.numTwo}= ${object.result}`
-     }
-    }
+    //  for (let i=0; i < response.data.length; i++){
+    //     let object =response.data[i]
+    //     console.log('response data', object);
+    //     resultHistoryHTML += `${object.numOne} ${object.operator} ${object.numTwo} = ${object.result}<br>`;
+
+    //  document.getElementById("resultHistory").innerHTML += resultHistoryHTML;
+    // //  }`${object.numOne} ${object.operator} ${object.numTwo}= ${object.result}`
+    // }
+for (let i = 0; i < response.data.length; i++) {
+    let object = response.data[i];
+    console.log('response data', object);
+
+    // Append the result to the HTML string
+    resultHistoryHTML = `${object.numOne} ${object.operator} ${object.numTwo} = ${object.result}<br>`;
+}
+
+// Set the accumulated HTML to the element's innerHTML once after the loop
+document.getElementById("resultHistory").innerHTML += resultHistoryHTML;
+
 }).catch((error) => {
     console.log('server error', error);
 })
