@@ -5,7 +5,7 @@ let PORT = process.env.PORT || 5001;
 
 app.use(express.json());
 app.use(express.static('server/public'));
-// app.use(bodyParser.json())
+app.use(bodyParser.json())
 
 // Global variable that will contain all of the
 // calculation objects:

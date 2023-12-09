@@ -13,13 +13,13 @@
 
   <form data-testid="calculator">
     <input id="firstInput" placeholder="First Number">
-    <button id="addOperator">+</button>
-    <button id="divideOperator">-</button>
-    <button id="multiplyOperator">*</button>
-    <button id="divideOperator">/</button>
+    <button onclick="addFunction()" id="addOperator">+</button>
+    <button onclick="subtractFunction()" id="subtractOperator">-</button>
+    <button onclick="multiplyFunction()" id="multiplyOperator">*</button>
+    <button onclick="divideFunction()" id="divideOperator">/</button>
     <input id="secondInput" placeholder="Second Number">
-    <button id="equateOperator">=</button>
-    <button id="clearOperator">C</button>
+    <button onclick="handlePOSTEquation(event)" id="equateOperator">=</button>
+    <button onclick="clearFunction()" id="clearOperator">C</button>
   </form>
 
   <section id="recentResult" data-testid="recentResult">
