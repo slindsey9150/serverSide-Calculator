@@ -36,4 +36,5 @@ function handlePOSTEquation(event) {
 function hereAValue(event){
   event.preventDefault()
   console.log('I was Clicked');
+  console.log('this is the type of operator i am',  event.target.closest('button').textContent);
   }
