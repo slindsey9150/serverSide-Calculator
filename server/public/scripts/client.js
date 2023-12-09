@@ -1,4 +1,6 @@
 console.log('client.js is sourced!');
+let theOperator = ''
+
 
 function handleGETEquation() {
 axios({
@@ -13,6 +15,7 @@ axios({
 }
 handleGETEquation()
 
+
 function handlePOSTEquation(event) {
     event.preventDefault()
 
@@ -22,7 +25,7 @@ function handlePOSTEquation(event) {
         data:       {
             numOne: firstInput.value,
             numTwo: secondInput.value,
-            operator: addOperator.value || subtractOperator.value || multiplyOperator.value || divideOperator.value,
+            operator: theOperator,
             result: 8
           }
     }).then((response) => {
@@ -33,8 +36,11 @@ function handlePOSTEquation(event) {
     handleGETEquation()
 }
 
+
 function hereAValue(event){
   event.preventDefault()
   console.log('I was Clicked');
   console.log('this is the type of operator i am',  event.target.closest('button').textContent);
+  let anOperator = event.target.closest('button').textContent;
+  theOperator = anOperator
   }
