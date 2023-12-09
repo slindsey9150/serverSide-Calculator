@@ -1,4 +1,3 @@
-let resultsArray = [];
 let practiceArray = [
     {
       numOne: 3,
@@ -102,8 +101,5 @@ function subtractFunction(firstNumber, secondNumber)  {
         // console.log('this is the divideFUnction result', result);
         return result;
     }
-
-
-
-    doMath();
+    module.exports=doMath()
 

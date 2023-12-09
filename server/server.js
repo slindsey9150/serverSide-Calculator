@@ -2,17 +2,10 @@ const express = require('express');
 const bodyParser =require('body-parser')
 const app = express();
 let PORT = process.env.PORT || 5001;
-// const addFunction = require('./Math Functions/addFunction')
-// const subtractFunction = require('./Math Functions/subtractFunction')
-// const multiplyFunction = require('./Math Functions/multiplyFunction')
-// const divideFunction = require('./Math Functions/divideFunction')
+const doMath = require('./doMathPractice')
 
 
-function doMath(){
-console.log('do math function');
 
-}
-doMath()
 
 app.use(express.json());
 app.use(express.static('server/public'));

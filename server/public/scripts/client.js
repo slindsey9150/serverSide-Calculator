@@ -32,3 +32,8 @@ function handlePOSTEquation(event) {
     })
     handleGETEquation()
 }
+
+function hereAValue(event){
+  event.preventDefault()
+  console.log('I was Clicked');
+  }

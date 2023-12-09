@@ -13,10 +13,10 @@
 
   <form data-testid="calculator">
     <input id="firstInput" placeholder="First Number">
-    <button onclick="addFunction()" id="addOperator">+</button>
-    <button onclick="subtractFunction()" id="subtractOperator">-</button>
-    <button onclick="multiplyFunction()" id="multiplyOperator">*</button>
-    <button onclick="divideFunction()" id="divideOperator">/</button>
+    <button onclick="hereAValue(event)" id="addOperator">+</button>
+    <button onclick="hereAValue(event)" id="subtractOperator">-</button>
+    <button onclick="hereAValue(event)" id="multiplyOperator">*</button>
+    <button onclick="hereAValue(event)" id="divideOperator">/</button>
     <input id="secondInput" placeholder="Second Number">
     <button onclick="handlePOSTEquation(event)" id="equateOperator">=</button>
     <button onclick="clearFunction()" id="clearOperator">C</button>
@@ -25,7 +25,6 @@
   <section id="recentResult" data-testid="recentResult">
     <!-- The most recent calculation result goes here. -->
   </section>
-
   <section id="resultHistory" data-testid="resultHistory">
     <!-- The list of calculation results goes here. -->
   </section>
