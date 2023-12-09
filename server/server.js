@@ -93,6 +93,7 @@ function doMath() {
   }
   // console.log("this is the practice array", practiceArray);
   // console.log('this is the results array', resultsArray);
+ 
 
 }
 function addFunction(firstNumber, secondNumber) {
@@ -120,7 +121,7 @@ function subtractFunction(firstNumber, secondNumber)  {
       return result;
   }
 
-  doMath()
+  
 
 
 

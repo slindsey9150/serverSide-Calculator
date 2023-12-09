@@ -33,6 +33,7 @@ function handlePOSTEquation(event) {
         console.log('server error', error);
     })
     handleGETEquation()
+    document.getElementById("calculator").reset();
 }
 
 
