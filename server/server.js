@@ -20,15 +20,6 @@ app.use(bodyParser.json())
 // Here's a wonderful place to make some routes:
 
 // GET /calculations
-let resultHistoryHTML = ''
-function resultHistoryCalculator() {
-for (let i = 0; i < calculations.length; i++) {
-  let object = calculations[i];
-  resultHistoryHTML += `${object.numOne} ${object.operator} ${object.numTwo} = ${object.result}`
-  // console.log('this is the result history', resultHistoryHTML);
-}
-}
-
 app.get('/calculations', (req,res) => {
 console.log('request for /calculations was made')
 doMath();
@@ -42,20 +33,6 @@ console.log('POST on /calculations', req.body);
 calculations.push(req.body)
 res.sendStatus(201)
 })
-
-app.get('', (req,res) => {
-  console.log('request for /resultHistoryHTML was made')
-  resultHistoryCalculator()
-  console.log('resultHistoryHTML', resultHistoryHTML);
-  res.send(resultHistoryHTML)
-  })
-  // POST /calculations
-  app.post('', (req,res) => {
-  console.log('POST on /calculations', req.body);
-  
-  calculations.push(req.body)
-  res.sendStatus(201)
-  })
 
 
 // math
@@ -116,7 +93,7 @@ function doMath() {
   }
   // console.log("this is the practice array", practiceArray);
   // console.log('this is the results array', resultsArray);
- resultHistoryCalculator()
+ 
 
 }
 function addFunction(firstNumber, secondNumber) {
