@@ -1,8 +1,8 @@
 //variable to add math operator to calculations array
 let theOperator = ''
-function handleGETEquation() {
-    let resultHistoryHTML = ''
 
+function handleGETEquation() {
+    // let resultHistoryHTML = ''
 axios({
     method: 'GET',
     url:'/calculations'
@@ -10,27 +10,41 @@ axios({
     // console.log('success', response.data);
        //display most recent result
    document.getElementById("recentResult").innerHTML = JSON.stringify(response.data[response.data.length-1].result);
-     //display list of previous calculations
-    //  for (let i=0; i < response.data.length; i++){
-    //     let object =response.data[i]
-    //     console.log('response data', object);
-    //     resultHistoryHTML += `${object.numOne} ${object.operator} ${object.numTwo} = ${object.result}<br>`;
-
-    //  document.getElementById("resultHistory").innerHTML += resultHistoryHTML;
-    // //  }`${object.numOne} ${object.operator} ${object.numTwo}= ${object.result}`
-    // }
-for (let i = 0; i < response.data.length; i++) {
-    let object = response.data[i];
-    console.log('response data', object);
-    console.log('in for loop',object);
-
+//loop to 
+// for (let i = 0; i < response.data.length; i++) {
+    // let object = response.data[i];
+    // console.log('response data', object);
+    // console.log('in for loop',object);
     // Append the result to the HTML string
-    resultHistoryHTML += `${object.numOne} ${object.operator} ${object.numTwo} = ${object.result}<br>`;
-}
-
+    // resultHistoryHTML += `${object.numOne} ${object.operator} ${object.numTwo} = ${object.result}<br>`;
+// }
 // Set the accumulated HTML to the element's innerHTML once after the loop
-document.getElementById("resultHistory").innerHTML = resultHistoryHTML;
+// document.getElementById("resultHistory").innerHTML = resultHistoryHTML;
+}).catch((error) => {
+    console.log('server error', error);
+})
+}
+handleGETEquation()
 
+function handleGETResults() {
+    // let resultHistoryHTML = ''
+axios({
+    method: 'GET',
+    url:''
+}).then((response) => {
+    // console.log('success', response.data);
+       //display most recent result
+   document.getElementById("resultHistory").innerHTML = response);
+//loop to 
+// for (let i = 0; i < response.data.length; i++) {
+    // let object = response.data[i];
+    // console.log('response data', object);
+    // console.log('in for loop',object);
+    // Append the result to the HTML string
+    // resultHistoryHTML += `${object.numOne} ${object.operator} ${object.numTwo} = ${object.result}<br>`;
+// }
+// Set the accumulated HTML to the element's innerHTML once after the loop
+// document.getElementById("resultHistory").innerHTML = resultHistoryHTML;
 }).catch((error) => {
     console.log('server error', error);
 })
