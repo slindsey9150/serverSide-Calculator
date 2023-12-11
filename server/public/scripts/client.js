@@ -72,3 +72,10 @@ function hereAValue(event){
   theOperator = anOperator
   }
 
+
+  function clearInputs(event){
+    event.preventDefault()
+    document.getElementById("firstInput").value = " ";
+    document.getElementById("secondInput").value = " ";
+  }
+
