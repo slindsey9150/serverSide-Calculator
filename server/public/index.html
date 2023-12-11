@@ -1,31 +1,33 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Server-Side Calculator</title>    
-    <script defer src="scripts/axios.js"></script>
-    <script defer src="scripts/client.js" charset="utf-8"></script>
-  </head>
-  <body>
-    <h1>Server-Side Calculator</h1>
 
-    <form data-testid="calculator">
-      <input placeholder="First Number">
-      <button>+</button>
-      <button>-</button>
-      <button>*</button>
-      <button>/</button>
-      <input placeholder="Second Number">
-      <button>=</button>
-      <button>C</button>
-    </form>
+<head>
+  <meta charset="utf-8">
+  <title>Server-Side Calculator</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script defer src="scripts/client.js" charset="utf-8"></script>
+</head>
 
-    <section data-testid="recentResult">
-      <!-- The most recent calculation result goes here. -->
-    </section>
+<body>
+  <h1>Server-Side Calculator</h1>
 
-    <section data-testid="resultHistory">
-      <!-- The list of calculation results goes here. -->
-    </section>
-  </body>
+  <form id="calculator" data-testid="calculator">
+    <input id="firstInput" placeholder="First Number">
+    <button onclick="hereAValue(event)" id="addOperator">+</button>
+    <button onclick="hereAValue(event)" id="subtractOperator">-</button>
+    <button onclick="hereAValue(event)" id="multiplyOperator">*</button>
+    <button onclick="hereAValue(event)" id="divideOperator">/</button>
+    <input id="secondInput" placeholder="Second Number">
+    <button onclick="handlePOSTEquation(event)" id="equateOperator">=</button>
+    <button onclick="clearInputs(event)" id="clearOperator">C</button>
+  </form>
+
+  <section id="recentResult" data-testid="recentResult">
+    <!-- The most recent calculation result goes here. -->
+  </section>
+  <section id="resultHistory" data-testid="resultHistory">
+    <!-- The list of calculation results goes here. -->
+  </section>
+</body>
+
 </html>
